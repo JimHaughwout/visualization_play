@@ -1,4 +1,4 @@
 visualization_play
 ==================
 
-Prototyping data visualizations
+Tinkering and prototyping with various visualization libraries: Google Charts, D3.js, etc.
