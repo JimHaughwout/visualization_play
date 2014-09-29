@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!-- This is an "Easter Egg" page on my blog, the Lagrangian Points.
+  See http://www.lagrangianpoints.com/about-jim/ for more about me.
+-->
+<html>
+<head>
+<title>Sankey Diagram of Most Frequent NFL Criminal Charges (2000-2014) by Jim Haughwout</title>
+<meta charset="utf-8">
+<meta name="description" content="Sankey diagram allowing detailed exploration of arrests for the four most frequent charges found in USAToday's NFL Arrest Database.">
+<link rel='stylesheet' id='twentyfourteen-style-css'  href='http://www.lagrangianpoints.com/wp-content/themes/twentyfourteen/style.css?ver=3.9.2' type='text/css' media='all' />
+
+<style>
+body
+   {
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+   }
+</style>
+</head>
+
+<body> 
+  <h1 class="entry-title">Sankey Diagram of Most Frequent Criminal Charges Leading to NFL Arrests (2000-2014)</h1>
+  <div class="entry-meta">
+      By <a href="http://www.lagrangianpoints.com/about-jim/">Jim Haughwout</a> 
+      &#149; SEP 2014
+  </div>
+  <br>
+  <p>This is a sankey diagram allowing exploration all NFL arrests for the <em>four most frequent</em> <b>Criminal Charges</b> by <b>Team of Player</b> (at time of arrest) to <b>Legal Outcome</b>. For example, Domestic Violence cases mostly arise from players in Denver; acquitals to this charge are greatly outnumbered by diversion programs, dropped cases or plea deals.
+
+  <p>Mouse over any Team to see the distribution of Criminal Charges that stem from it. Do the same for an Criminal Charge to explore the source of charges by Team and distribution of Legal Outcomes. Mouse over an Legal Outcome to see which types of Criminal Charges most (and least) frequently lead to this result.
+
+<script type="text/javascript"
+  src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_basic" style="width: 1000px; height: 2400px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       ['ARI', 'Assault', 1],
+       ['ARI', 'Domestic violence', 4],
+       ['ARI', 'Drugs', 1],
+       ['ARI', 'DUI', 5],
+       ['ATL', 'Assault', 1],
+       ['ATL', 'Domestic violence', 2],
+       ['ATL', 'Drugs', 3],
+       ['ATL', 'DUI', 4],
+       ['BAL', 'Assault', 4],
+       ['BAL', 'Domestic violence', 2],
+       ['BAL', 'Drugs', 5],
+       ['BAL', 'DUI', 5],
+       ['BUF', 'Assault', 1],
+       ['BUF', 'Drugs', 4],
+       ['BUF', 'DUI', 4],
+       ['CAR', 'Assault', 4],
+       ['CAR', 'Domestic violence', 2],
+       ['CAR', 'Drugs', 4],
+       ['CAR', 'DUI', 7],
+       ['CHI', 'Assault', 5],
+       ['CHI', 'Drugs', 4],
+       ['CHI', 'DUI', 9],
+       ['CIN', 'Assault', 8],
+       ['CIN', 'Domestic violence', 6],
+       ['CIN', 'Drugs', 4],
+       ['CIN', 'DUI', 9],
+       ['CLE', 'Assault', 3],
+       ['CLE', 'Domestic violence', 1],
+       ['CLE', 'Drugs', 6],
+       ['CLE', 'DUI', 8],
+       ['DAL', 'Assault', 1],
+       ['DAL', 'Domestic violence', 1],
+       ['DAL', 'Drugs', 1],
+       ['DAL', 'DUI', 3],
+       ['DEN', 'Assault', 5],
+       ['DEN', 'Domestic violence', 11],
+       ['DEN', 'Drugs', 3],
+       ['DEN', 'DUI', 10],
+       ['DET', 'Assault', 2],
+       ['DET', 'Domestic violence', 2],
+       ['DET', 'Drugs', 4],
+       ['DET', 'DUI', 5],
+       ['Free agent', 'Assault', 1],
+       ['GB', 'Assault', 1],
+       ['GB', 'Domestic violence', 3],
+       ['GB', 'Drugs', 5],
+       ['GB', 'DUI', 2],
+       ['HOU', 'Assault', 1],
+       ['HOU', 'Domestic violence', 1],
+       ['HOU', 'Drugs', 1],
+       ['HOU', 'DUI', 4],
+       ['IND', 'Domestic violence', 2],
+       ['IND', 'Drugs', 3],
+       ['IND', 'DUI', 5],
+       ['JAX', 'Assault', 1],
+       ['JAX', 'Drugs', 8],
+       ['JAX', 'DUI', 7],
+       ['KC', 'Assault', 2],
+       ['KC', 'Domestic violence', 4],
+       ['KC', 'Drugs', 3],
+       ['KC', 'DUI', 10],
+       ['MIA', 'Assault', 2],
+       ['MIA', 'Domestic violence', 8],
+       ['MIA', 'Drugs', 3],
+       ['MIA', 'DUI', 8],
+       ['MIN', 'Assault', 7],
+       ['MIN', 'Domestic violence', 3],
+       ['MIN', 'Drugs', 5],
+       ['MIN', 'DUI', 16],
+       ['NE', 'Assault', 3],
+       ['NE', 'Domestic violence', 3],
+       ['NE', 'Drugs', 4],
+       ['NE', 'DUI', 2],
+       ['NO', 'Domestic violence', 2],
+       ['NO', 'Drugs', 2],
+       ['NO', 'DUI', 7],
+       ['NYG', 'Assault', 1],
+       ['NYG', 'Drugs', 2],
+       ['NYG', 'DUI', 3],
+       ['NYJ', 'Assault', 1],
+       ['NYJ', 'Domestic violence', 2],
+       ['NYJ', 'Drugs', 5],
+       ['NYJ', 'DUI', 3],
+       ['OAK', 'Assault', 2],
+       ['OAK', 'Domestic violence', 2],
+       ['OAK', 'Drugs', 2],
+       ['OAK', 'DUI', 6],
+       ['PHI', 'Assault', 2],
+       ['PHI', 'Drugs', 3],
+       ['PIT', 'Assault', 1],
+       ['PIT', 'Domestic violence', 5],
+       ['PIT', 'Drugs', 4],
+       ['PIT', 'DUI', 2],
+       ['SD', 'Assault', 6],
+       ['SD', 'Domestic violence', 2],
+       ['SD', 'Drugs', 2],
+       ['SD', 'DUI', 9],
+       ['SEA', 'Assault', 1],
+       ['SEA', 'Domestic violence', 6],
+       ['SEA', 'Drugs', 2],
+       ['SEA', 'DUI', 9],
+       ['SF', 'Assault', 1],
+       ['SF', 'Domestic violence', 1],
+       ['SF', 'Drugs', 2],
+       ['SF', 'DUI', 10],
+       ['STL', 'Assault', 1],
+       ['STL', 'Domestic violence', 2],
+       ['STL', 'Drugs', 1],
+       ['STL', 'DUI', 4],
+       ['TB', 'Assault', 1],
+       ['TB', 'Domestic violence', 3],
+       ['TB', 'Drugs', 4],
+       ['TB', 'DUI', 10],
+       ['TEN', 'Assault', 3],
+       ['TEN', 'Domestic violence', 4],
+       ['TEN', 'Drugs', 4],
+       ['TEN', 'DUI', 11],
+       ['WAS', 'Assault', 3],
+       ['WAS', 'Domestic violence', 1],
+       ['WAS', 'Drugs', 1],
+       ['WAS', 'DUI', 8],
+       ['Assault', 'Acquitted', 3],
+       ['Assault', 'Case Dropped', 26],
+       ['Assault', 'Died', 1],
+       ['Assault', 'Diversion Program', 4],
+       ['Assault', 'Guilty (Convicted)', 3],
+       ['Assault', 'Guilty (Pleaded)', 18],
+       ['Assault', 'Mediation', 1],
+       ['Assault', 'UNK/Undetermined', 20],
+       ['Domestic violence', 'Acquitted', 2],
+       ['Domestic violence', 'Case Dropped', 24],
+       ['Domestic violence', 'Diversion Program', 22],
+       ['Domestic violence', 'Guilty (Pleaded)', 15],
+       ['Domestic violence', 'Probation/Deferred', 1],
+       ['Domestic violence', 'UNK/Undetermined', 21],
+       ['Drugs', 'Acquitted', 4],
+       ['Drugs', 'Case Dropped', 15],
+       ['Drugs', 'Diversion Program', 5],
+       ['Drugs', 'Guilty (Convicted)', 7],
+       ['Drugs', 'Guilty (Pleaded Reduced Charge)', 2],
+       ['Drugs', 'Guilty (Pleaded)', 27],
+       ['Drugs', 'Indicted/In-Process', 1],
+       ['Drugs', 'UNK/Undetermined', 44],
+       ['DUI', 'Acquitted', 14],
+       ['DUI', 'Case Dropped', 18],
+       ['DUI', 'Diversion Program', 5],
+       ['DUI', 'Guilty (Convicted)', 18],
+       ['DUI', 'Guilty (Pleaded Reduced Charge)', 2],
+       ['DUI', 'Guilty (Pleaded)', 82],
+       ['DUI', 'Indicted/In-Process', 1],
+       ['DUI', 'UNK/Undetermined', 65]
+    ]);
+    
+    var options = {
+      width: 1000,
+      sankey: {
+        link: { color: { fillOpacity: 0.9 } },
+      }
+    };
+
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+    chart.draw(data, options);
+   }
+</script>
+  <br>
+  <p>These four charges represent 60% of all NFL arrests. For more information visit my <a href="http://www.lagrangianpoints.com/easter_eggs/data/full_nfl_arrest_sankey.html">Sankey of all 51 Criminal Charges</a> (it is much more busy). You can find a <a href="http://www.lagrangianpoints.com/2014/09/data-analysis-nfl-arrest-database-15-surprising-sometimes-scary-insights/">complete posting on my analysis of all NFL arrests here</a>.
+
+</body>
+<footer>
+  <div class="entry-meta">
+    You may use this as Creative Commons. Please reference <a href="http://www.lagrangianpoints.com/about-jim/">Jim Haughwout</a> or the <a href="http://www.lagrangianpoints.com/">Lagrangian Points Blog</a>.
+  </div>
+  <br>
+</footer>
+</html>
