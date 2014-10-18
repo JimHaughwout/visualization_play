@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!-- This is an "Easter Egg" page on my blog, the Lagrangian Points.
+  See http://www.lagrangianpoints.com/about-jim/ for more about me.
+-->
+<html>
+<head>
+<title>Sankey Diagram of Most Frequent NFL Criminal Charges (2000-2014) by Jim Haughwout</title>
+<meta charset="utf-8">
+<meta name="description" content="Sankey diagram allowing detailed exploration of arrests for the four most frequent charges found in USAToday's NFL Arrest Database.">
+<link rel='stylesheet' id='twentyfourteen-style-css'  href='http://www.lagrangianpoints.com/wp-content/themes/twentyfourteen/style.css?ver=3.9.2' type='text/css' media='all' />
+
+<style>
+body
+   {
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+   }
+</style>
+</head>
+
+<body> 
+  <h1 class="entry-title">Sankey Diagram of Most Frequent Criminal Charges Leading to NFL Arrests (2000-2014)</h1>
+  <div class="entry-meta">
+      By <a href="http://www.lagrangianpoints.com/about-jim/">Jim Haughwout</a> 
+      &#149; SEP 2014
+  </div>
+  <br>
+  <p>This is a sankey diagram allowing exploration all NFL arrests for the <em>four most frequent</em> <b>Criminal Charges</b> by <b>Team of Player</b> (at time of arrest) to <b>Legal Outcome</b>. For example, Domestic Violence cases mostly arise from players in Denver; acquitals to this charge are greatly outnumbered by diversion programs, dropped cases or plea deals.
+
+  <p>Mouse over any Team to see the distribution of Criminal Charges that stem from it. Do the same for an Criminal Charge to explore the source of charges by Team and distribution of Legal Outcomes. Mouse over an Legal Outcome to see which types of Criminal Charges most (and least) frequently lead to this result.
+
+<script type="text/javascript"
+  src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_basic" style="width: 540px; height: 800px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       ['West Virginia', 'Alcohol', 4],
+       ['West Virginia', 'Assault', 5],
+       ['West Virginia', 'Battery', 1],
+       ['West Virginia', 'Child support', 1],
+       ['West Virginia', 'Coercion', 1],
+       ['West Virginia', 'Disorderly conduct', 3],
+       ['West Virginia', 'Domestic violence', 1],
+       ['West Virginia', 'Drugs', 4],
+       ['West Virginia', 'DUI', 3],
+       ['West Virginia', 'Gun', 2],
+       ['West Virginia', 'Indecent exposure', 1],
+       ['West Virginia', 'License', 1],
+       ['West Virginia', 'Public intoxication', 1],
+       ['Miami', 'Assault', 2],
+       ['Miami', 'Battery', 1],
+       ['Miami', 'Burglary', 1],
+       ['Miami', 'Disorderly conduct', 2],
+       ['Miami', 'Domestic violence', 2],
+       ['Miami', 'Drugs', 2],
+       ['Miami', 'DUI', 7],
+       ['Miami', 'Failure to appear', 1],
+       ['Miami', 'Gun', 1],
+       ['Miami', 'Murder', 1],
+       ['Miami', 'Obstruction', 1],
+       ['Miami', 'Probation violation', 1],
+       ['Miami', 'Reckless driving', 2],
+       ['Miami', 'Sex', 1],
+       ['Miami', 'Solicitation', 1],
+       ['USC', 'Assault', 3],
+       ['USC', 'Disorderly conduct', 2],
+       ['USC', 'Domestic violence', 1],
+       ['USC', 'Drugs', 2],
+       ['USC', 'DUI', 9],
+       ['USC', 'License', 2],
+       ['USC', 'Outstanding warrant', 1],
+       ['USC', 'Public intoxication', 1],
+       ['USC', 'Reckless driving', 1],
+       ['USC', 'Sexual assault', 1],
+       ['Ohio State', 'Alcohol', 1],
+       ['Ohio State', 'Animal abuse', 1],
+       ['Ohio State', 'Assault', 3],
+       ['Ohio State', 'Disorderly conduct', 3],
+       ['Ohio State', 'Domestic dispute', 1],
+       ['Ohio State', 'Domestic violence', 4],
+       ['Ohio State', 'Drugs', 4],
+       ['Ohio State', 'DUI', 5],
+       ['Ohio State', 'Gun', 2],
+       ['Ohio State', 'Theft', 1],
+       ['Florida', 'Assault', 2],
+       ['Florida', 'Child support', 1],
+       ['Florida', 'Disorderly conduct', 1],
+       ['Florida', 'Domestic violence', 2],
+       ['Florida', 'Drugs', 5],
+       ['Florida', 'DUI', 4],
+       ['Florida', 'Gun', 3],
+       ['Florida', 'Murder', 1],
+       ['Florida', 'Outstanding warrant', 1],
+       ['Michigan', 'Alcohol', 1],
+       ['Michigan', 'Assault', 1],
+       ['Michigan', 'Battery', 1],
+       ['Michigan', 'Disorderly conduct', 1],
+       ['Michigan', 'Domestic violence', 1],
+       ['Michigan', 'DUI', 7],
+       ['Michigan', 'Failure to appear', 1],
+       ['Michigan', 'Reckless driving', 1],
+       ['Michigan', 'Resisting arrest', 1],
+       ['Michigan', 'Violating court order', 2],
+       ['Georgia', 'Alcohol', 2],
+       ['Georgia', 'Assault', 1],
+       ['Georgia', 'Burglary', 1],
+       ['Georgia', 'Domestic violence', 4],
+       ['Georgia', 'Drugs', 1],
+       ['Georgia', 'DUI', 4],
+       ['Georgia', 'Failure to appear', 1],
+       ['Georgia', 'Gun', 3],
+       ['Georgia', 'License', 1],
+       ['Georgia', 'Manslaughter', 1]
+    ]);
+    
+    var options = {
+      width: 540,
+      sankey: {
+        link: { color: { fillOpacity: 0.9 } },
+      }
+    };
+
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+    chart.draw(data, options);
+   }
+</script>
+  <br>
+  <p>These four charges represent 60% of all NFL arrests. For more information visit my <a href="http://www.lagrangianpoints.com/easter_eggs/data/full_nfl_arrest_sankey.html">Sankey of all 51 Criminal Charges</a> (it is much more busy). You can find a <a href="http://www.lagrangianpoints.com/2014/09/data-analysis-nfl-arrest-database-15-surprising-sometimes-scary-insights/">complete posting on my analysis of all NFL arrests here</a>.
+
+</body>
+<footer>
+  <div class="entry-meta">
+    You may use this as Creative Commons. Please reference <a href="http://www.lagrangianpoints.com/about-jim/">Jim Haughwout</a> or the <a href="http://www.lagrangianpoints.com/">Lagrangian Points Blog</a>.
+  </div>
+  <br>
+</footer>
+</html>

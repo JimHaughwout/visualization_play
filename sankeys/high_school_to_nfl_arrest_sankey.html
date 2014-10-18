@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- This is an "Easter Egg" page on my blog, the Lagrangian Points.
+  See http://www.lagrangianpoints.com/about-jim/ for more about me.
+-->
+<html>
+<head>
+<title>Sankey Diagram of Most Frequent NFL Criminal Charges (2000-2014) by Jim Haughwout</title>
+<meta charset="utf-8">
+<meta name="description" content="Sankey diagram allowing detailed exploration of arrests for the four most frequent charges found in USAToday's NFL Arrest Database.">
+<link rel='stylesheet' id='twentyfourteen-style-css'  href='http://www.lagrangianpoints.com/wp-content/themes/twentyfourteen/style.css?ver=3.9.2' type='text/css' media='all' />
+
+<style>
+body
+   {
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+   }
+</style>
+</head>
+
+<body> 
+  <h1 class="entry-title">Sankey Diagram of Most Frequent Criminal Charges Leading to NFL Arrests (2000-2014)</h1>
+  <div class="entry-meta">
+      By <a href="http://www.lagrangianpoints.com/about-jim/">Jim Haughwout</a> 
+      &#149; SEP 2014
+  </div>
+  <br>
+  <p>This is a sankey diagram allowing exploration all NFL arrests for the <em>four most frequent</em> <b>Criminal Charges</b> by <b>Team of Player</b> (at time of arrest) to <b>Legal Outcome</b>. For example, Domestic Violence cases mostly arise from players in Denver; acquitals to this charge are greatly outnumbered by diversion programs, dropped cases or plea deals.
+
+  <p>Mouse over any Team to see the distribution of Criminal Charges that stem from it. Do the same for an Criminal Charge to explore the source of charges by Team and distribution of Legal Outcomes. Mouse over an Legal Outcome to see which types of Criminal Charges most (and least) frequently lead to this result.
+
+<script type="text/javascript"
+  src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_basic" style="width: 540px; height: 800px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       ['Atlanta, GA', 'Alcohol', 1],
+       ['Atlanta, GA', 'Assault', 4],
+       ['Atlanta, GA', 'Burglary', 1],
+       ['Atlanta, GA', 'Coercion', 1],
+       ['Atlanta, GA', 'Disorderly conduct', 1],
+       ['Atlanta, GA', 'Drugs', 6],
+       ['Atlanta, GA', 'DUI', 1],
+       ['Atlanta, GA', 'Gun', 4],
+       ['Atlanta, GA', 'Public intoxication', 1],
+       ['Miami, FL', 'Assault', 3],
+       ['Miami, FL', 'Burglary', 1],
+       ['Miami, FL', 'Domestic violence', 2],
+       ['Miami, FL', 'Drugs', 2],
+       ['Miami, FL', 'DUI', 6],
+       ['Miami, FL', 'Gun', 2],
+       ['Miami, FL', 'License', 1],
+       ['San Diego, CA', 'Domestic violence', 3],
+       ['San Diego, CA', 'Drugs', 1],
+       ['San Diego, CA', 'DUI', 2],
+       ['San Diego, CA', 'Failure to appear', 1],
+       ['San Diego, CA', 'License', 1],
+       ['San Diego, CA', 'Reckless driving', 2],
+       ['San Diego, CA', 'Sexual assault', 1],
+       ['San Diego, CA', 'Theft', 1],
+       ['Houston, TX', 'Alcohol', 1],
+       ['Houston, TX', 'Assault', 2],
+       ['Houston, TX', 'Drugs', 4],
+       ['Houston, TX', 'DUI', 1],
+       ['Houston, TX', 'Failure to appear', 1],
+       ['Houston, TX', 'Gun', 1],
+       ['Houston, TX', 'Violating court order', 1],
+       ['Bakersfield, CA', 'Assault', 1],
+       ['Bakersfield, CA', 'Battery', 1],
+       ['Bakersfield, CA', 'Domestic violence', 2],
+       ['Bakersfield, CA', 'DUI', 2],
+       ['Bakersfield, CA', 'Reckless driving', 1],
+       ['Bakersfield, CA', 'Theft', 2],
+       ['Belle Glade, FL', 'Disorderly conduct', 2],
+       ['Belle Glade, FL', 'Domestic violence', 2],
+       ['Belle Glade, FL', 'Drugs', 2],
+       ['Belle Glade, FL', 'DUI', 1],
+       ['Belle Glade, FL', 'Outstanding warrant', 1],
+       ['Jacksonville, FL', 'Domestic violence', 4],
+       ['Jacksonville, FL', 'Drugs', 1],
+       ['Jacksonville, FL', 'Failure to appear', 1],
+       ['Jacksonville, FL', 'Gun', 1]
+    ]);
+    
+    var options = {
+      width: 540,
+      sankey: {
+        link: { color: { fillOpacity: 0.9 } },
+      }
+    };
+
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+    chart.draw(data, options);
+   }
+</script>
+  <br>
+  <p>These four charges represent 60% of all NFL arrests. For more information visit my <a href="http://www.lagrangianpoints.com/easter_eggs/data/full_nfl_arrest_sankey.html">Sankey of all 51 Criminal Charges</a> (it is much more busy). You can find a <a href="http://www.lagrangianpoints.com/2014/09/data-analysis-nfl-arrest-database-15-surprising-sometimes-scary-insights/">complete posting on my analysis of all NFL arrests here</a>.
+
+</body>
+<footer>
+  <div class="entry-meta">
+    You may use this as Creative Commons. Please reference <a href="http://www.lagrangianpoints.com/about-jim/">Jim Haughwout</a> or the <a href="http://www.lagrangianpoints.com/">Lagrangian Points Blog</a>.
+  </div>
+  <br>
+</footer>
+</html>
