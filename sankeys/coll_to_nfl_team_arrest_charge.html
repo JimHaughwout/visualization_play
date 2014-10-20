@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<!-- This is an "Easter Egg" page on my blog, the Lagrangian Points.
+  See http://www.lagrangianpoints.com/about-jim/ for more about me.
+-->
+<html>
+<head>
+<title>Sankey Diagram of Most Frequent NFL Criminal Charges (2000-2014) by Jim Haughwout</title>
+<meta charset="utf-8">
+<meta name="description" content="Sankey diagram allowing detailed exploration of arrests for the four most frequent charges found in USAToday's NFL Arrest Database.">
+<link rel='stylesheet' id='twentyfourteen-style-css'  href='http://www.lagrangianpoints.com/wp-content/themes/twentyfourteen/style.css?ver=3.9.2' type='text/css' media='all' />
+
+<style>
+body
+   {
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+   }
+</style>
+</head>
+
+<body> 
+  <h1 class="entry-title">Sankey Diagram of Most Frequent Criminal Charges Leading to NFL Arrests (2000-2014)</h1>
+  <div class="entry-meta">
+      By <a href="http://www.lagrangianpoints.com/about-jim/">Jim Haughwout</a> 
+      &#149; SEP 2014
+  </div>
+  <br>
+  <p>This is a sankey diagram allowing exploration all NFL arrests for the <em>four most frequent</em> <b>Criminal Charges</b> by <b>Team of Player</b> (at time of arrest) to <b>Legal Outcome</b>. For example, Domestic Violence cases mostly arise from players in Denver; acquitals to this charge are greatly outnumbered by diversion programs, dropped cases or plea deals.
+
+  <p>Mouse over any Team to see the distribution of Criminal Charges that stem from it. Do the same for an Criminal Charge to explore the source of charges by Team and distribution of Legal Outcomes. Mouse over an Legal Outcome to see which types of Criminal Charges most (and least) frequently lead to this result.
+
+<script type="text/javascript"
+  src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
+</script>
+
+<div id="sankey_basic" style="width: 540px; height: 900px;"></div>
+
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'From');
+    data.addColumn('string', 'To');
+    data.addColumn('number', 'Weight');
+    data.addRows([
+       ['West Virginia', 'BUF', 1],
+       ['West Virginia', 'CAR', 1],
+       ['West Virginia', 'CHI', 1],
+       ['West Virginia', 'CIN', 11],
+       ['West Virginia', 'DAL', 1],
+       ['West Virginia', 'DEN', 2],
+       ['West Virginia', 'IND', 1],
+       ['West Virginia', 'NYJ', 1],
+       ['West Virginia', 'SEA', 1],
+       ['West Virginia', 'STL', 1],
+       ['West Virginia', 'TEN', 7],
+       ['Miami', 'ARI', 1],
+       ['Miami', 'BAL', 2],
+       ['Miami', 'BUF', 1],
+       ['Miami', 'CAR', 1],
+       ['Miami', 'CIN', 1],
+       ['Miami', 'CLE', 1],
+       ['Miami', 'DEN', 2],
+       ['Miami', 'GB', 1],
+       ['Miami', 'IND', 1],
+       ['Miami', 'MIN', 5],
+       ['Miami', 'NO', 1],
+       ['Miami', 'NYJ', 1],
+       ['Miami', 'PIT', 1],
+       ['Miami', 'SF', 1],
+       ['Miami', 'TEN', 1],
+       ['Miami', 'WAS', 5],
+       ['USC', 'CAR', 2],
+       ['USC', 'CIN', 3],
+       ['USC', 'IND', 1],
+       ['USC', 'JAX', 1],
+       ['USC', 'MIN', 2],
+       ['USC', 'NYJ', 1],
+       ['USC', 'OAK', 2],
+       ['USC', 'PHI', 1],
+       ['USC', 'SD', 1],
+       ['USC', 'SEA', 1],
+       ['USC', 'STL', 2],
+       ['USC', 'TB', 1],
+       ['USC', 'TEN', 1],
+       ['USC', 'WAS', 4],
+       ['Ohio State', 'ARI', 2],
+       ['Ohio State', 'BUF', 2],
+       ['Ohio State', 'CHI', 1],
+       ['Ohio State', 'DAL', 3],
+       ['Ohio State', 'Free agent', 1],
+       ['Ohio State', 'IND', 1],
+       ['Ohio State', 'KC', 3],
+       ['Ohio State', 'MIA', 1],
+       ['Ohio State', 'MIN', 1],
+       ['Ohio State', 'NE', 1],
+       ['Ohio State', 'NO', 1],
+       ['Ohio State', 'PHI', 1],
+       ['Ohio State', 'PIT', 3],
+       ['Ohio State', 'SD', 2],
+       ['Ohio State', 'TB', 1],
+       ['Ohio State', 'TEN', 1],
+       ['Florida', 'BAL', 1],
+       ['Florida', 'CLE', 1],
+       ['Florida', 'DEN', 1],
+       ['Florida', 'JAX', 2],
+       ['Florida', 'MIN', 3],
+       ['Florida', 'NE', 2],
+       ['Florida', 'NO', 1],
+       ['Florida', 'NYG', 1],
+       ['Florida', 'OAK', 1],
+       ['Florida', 'PHI', 1],
+       ['Florida', 'PIT', 1],
+       ['Florida', 'SF', 3],
+       ['Florida', 'TB', 1],
+       ['Florida', 'TEN', 1],
+       ['Michigan', 'BUF', 1],
+       ['Michigan', 'CHI', 3],
+       ['Michigan', 'CIN', 1],
+       ['Michigan', 'CLE', 1],
+       ['Michigan', 'DEN', 1],
+       ['Michigan', 'IND', 1],
+       ['Michigan', 'JAX', 1],
+       ['Michigan', 'NE', 2],
+       ['Michigan', 'NYJ', 1],
+       ['Michigan', 'OAK', 2],
+       ['Michigan', 'PHI', 1],
+       ['Michigan', 'SD', 1],
+       ['Michigan', 'TB', 1],
+       ['Georgia', 'CAR', 2],
+       ['Georgia', 'CHI', 1],
+       ['Georgia', 'CIN', 2],
+       ['Georgia', 'CLE', 2],
+       ['Georgia', 'DEN', 1],
+       ['Georgia', 'MIA', 3],
+       ['Georgia', 'MIN', 1],
+       ['Georgia', 'NE', 2],
+       ['Georgia', 'NO', 1],
+       ['Georgia', 'NYG', 1],
+       ['Georgia', 'PIT', 1],
+       ['Georgia', 'SF', 1],
+       ['Georgia', 'TB', 1],
+       ['ARI', 'Failure to appear', 1],
+       ['BAL', 'Domestic violence', 1],
+       ['BAL', 'Drugs', 1],
+       ['BAL', 'Murder', 1],
+       ['BUF', 'DUI', 2],
+       ['BUF', 'Indecent exposure', 1],
+       ['CAR', 'Assault', 1],
+       ['CAR', 'Domestic violence', 1],
+       ['CAR', 'DUI', 3],
+       ['CAR', 'Failure to appear', 1],
+       ['CHI', 'Battery', 1],
+       ['CHI', 'Drugs', 1],
+       ['CHI', 'License', 1],
+       ['CHI', 'Reckless driving', 1],
+       ['CHI', 'Violating court order', 1],
+       ['CIN', 'Alcohol', 2],
+       ['CIN', 'Assault', 3],
+       ['CIN', 'Disorderly conduct', 2],
+       ['CIN', 'Domestic violence', 2],
+       ['CIN', 'Drugs', 1],
+       ['CIN', 'DUI', 4],
+       ['CIN', 'Gun', 2],
+       ['CIN', 'License', 1],
+       ['CIN', 'Probation violation', 1],
+       ['CLE', 'Assault', 1],
+       ['CLE', 'Burglary', 1],
+       ['CLE', 'DUI', 1],
+       ['CLE', 'Gun', 2],
+       ['CLE', 'Reckless driving', 1],
+       ['DAL', 'Assault', 1],
+       ['DAL', 'Alcohol', 1],
+       ['DAL', 'Disorderly conduct', 2],
+       ['DEN', 'Alcohol', 1],
+       ['DEN', 'Assault', 1],
+       ['DEN', 'Drugs', 1],
+       ['DEN', 'DUI', 4],
+       ['Free agent', 'Assault', 1],
+       ['GB', 'Battery', 1],
+       ['GB', 'Burglary', 1],
+       ['IND', 'Alcohol', 1],
+       ['IND', 'Drugs', 1],
+       ['IND', 'DUI', 1],
+       ['IND', 'Failure to appear', 1],
+       ['JAX', 'Disorderly conduct', 2],
+       ['JAX', 'Drugs', 1],
+       ['JAX', 'Violating court order', 1],
+       ['KC', 'Drugs', 1],
+       ['KC', 'DUI', 1],
+       ['KC', 'Theft', 1],
+       ['MIA', 'Alcohol', 1],
+       ['MIA', 'Domestic violence', 3],
+       ['MIN', 'Assault', 4],
+       ['MIN', 'Battery', 1],
+       ['MIN', 'Disorderly conduct', 2],
+       ['MIN', 'DUI', 1],
+       ['MIN', 'Obstruction', 1],
+       ['MIN', 'Public intoxication', 1],
+       ['MIN', 'Sex', 1],
+       ['NE', 'Drugs', 1],
+       ['NE', 'DUI', 1],
+       ['NE', 'Gun', 2],
+       ['NE', 'Murder', 1],
+       ['NE', 'Resisting arrest', 1],
+       ['NO', 'DUI', 1],
+       ['NO', 'Manslaughter', 1],
+       ['NO', 'Reckless driving', 1],
+       ['NYG', 'Alcohol', 1],
+       ['NYG', 'Child support', 1],
+       ['NYJ', 'DUI', 1],
+       ['NYJ', 'Outstanding warrant', 1],
+       ['NYJ', 'Drugs', 1],
+       ['NYJ', 'Battery', 1],
+       ['OAK', 'Alcohol', 1],
+       ['OAK', 'Drugs', 1],
+       ['OAK', 'DUI', 2],
+       ['OAK', 'Sexual assault', 1],
+       ['PHI', 'Animal abuse', 1],
+       ['PHI', 'Gun', 1],
+       ['PHI', 'Drugs', 1],
+       ['PHI', 'Disorderly conduct', 1],
+       ['PHI', 'Gun', 1],
+       ['PIT', 'Domestic violence', 2],
+       ['PIT', 'DUI', 1],
+       ['PIT', 'Pimping', 1],
+       ['SD', 'Domestic violence', 1],
+       ['SD', 'Drugs', 1],
+       ['SEA', 'DUI', 2],
+       ['SF', 'Domestic violence', 1],
+       ['SF', 'DUI', 3],
+       ['SF', 'Outstanding warrant', 1],
+       ['STL', 'Assault', 1],
+       ['STL', 'Child support', 1],
+       ['STL', 'DUI', 1],
+       ['TB', 'Domestic violence', 1],
+       ['TB', 'Drugs', 1],
+       ['TB', 'DUI', 2],
+       ['TEN', 'Assault', 2],
+       ['TEN', 'Coercion', 1],
+       ['TEN', 'Disorderly conduct', 1],
+       ['TEN', 'Drugs', 2],
+       ['TEN', 'DUI', 1],
+       ['TEN', 'Gun', 1],
+       ['TEN', 'Public intoxication', 1],
+       ['TEN', 'Domestic violence', 1],
+       ['TEN', 'Solicitation', 1],
+       ['WAS', 'Assault', 1],
+       ['WAS', 'DUI', 4],
+       ['WAS', 'Gun', 1],
+       ['WAS', 'License', 2],
+       ['WAS', 'Reckless driving', 1]
+    ]);
+    
+    var options = {
+      width: 540,
+      sankey: {
+        link: { color: { fillOpacity: 0.9 } },
+      }
+    };
+
+    var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+    chart.draw(data, options);
+   }
+</script>
+  <br>
+  <p>These four charges represent 60% of all NFL arrests. For more information visit my <a href="http://www.lagrangianpoints.com/easter_eggs/data/full_nfl_arrest_sankey.html">Sankey of all 51 Criminal Charges</a> (it is much more busy). You can find a <a href="http://www.lagrangianpoints.com/2014/09/data-analysis-nfl-arrest-database-15-surprising-sometimes-scary-insights/">complete posting on my analysis of all NFL arrests here</a>.
+
+</body>
+<footer>
+  <div class="entry-meta">
+    You may use this as Creative Commons. Please reference <a href="http://www.lagrangianpoints.com/about-jim/">Jim Haughwout</a> or the <a href="http://www.lagrangianpoints.com/">Lagrangian Points Blog</a>.
+  </div>
+  <br>
+</footer>
+</html>
